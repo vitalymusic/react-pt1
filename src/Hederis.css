@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jockey+One&display=swap');
+img{
+    height: 100px;
+}
+
+
+header{
+    display: flex;
+    justify-content: center;
+    gap:50px;
+
+
+    h1{
+        font-family: 'Imperial Script';
+        font-size: 3rem;
+        margin:0px;
+    }
+
+    h2{
+         margin:0px;
+    }
+}
