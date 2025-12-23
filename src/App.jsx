@@ -7,16 +7,25 @@ import './App.css';
 
 import Hederis from './Hederis';
 import Pakalpojumi from './Pakalpojumi';
+import MateralUI from './MateralUI';
 
 function App() {
 //  JSX - JavaScripteXtended
+  let showAlert = (e)=>{
+    alert(e.target.innerText);
+  }
+
+
+
+
 
   return (
     <>
       <Hederis />
       <main>
-       <h3>Mūsu pakalpojumi</h3>
-       <Pakalpojumi></Pakalpojumi>
+       <h3 onClick={showAlert}>Mūsu pakalpojumi</h3>
+       <Pakalpojumi />
+       <MateralUI />
       </main>
       <footer>
         <h3>Fūteris</h3>
