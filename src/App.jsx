@@ -6,6 +6,7 @@ import '@fontsource/roboto/700.css';
 import './App.css';
 
 import Hederis from './Hederis';
+import Pakalpojumi from './Pakalpojumi';
 
 function App() {
 //  JSX - JavaScripteXtended
@@ -14,7 +15,8 @@ function App() {
     <>
       <Hederis />
       <main>
-        te nāks citi elementi
+       <h3>Mūsu pakalpojumi</h3>
+       <Pakalpojumi></Pakalpojumi>
       </main>
       <footer>
         <h3>Fūteris</h3>
