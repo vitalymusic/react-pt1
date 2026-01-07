@@ -10,30 +10,35 @@ import Pakalpojumi from './Pakalpojumi';
 import MateralUI from './MateralUI';
 import ButtonAppBar from './ButtonAppBar';
 import SanaIzvelne from './SanaIzvelne';
+import Home from './Home';
+
+
+import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import User from './User';
 
 function App() {
 
-   const [openSanaIzvelne, setOpenSanaIzvelne] = useState(false);
+  const [openSanaIzvelne, setOpenSanaIzvelne] = useState(false);
 
 
 
-//  JSX - JavaScripteXtended
-  let showAlert = (e)=>{
+  //  JSX - JavaScripteXtended
+  let showAlert = (e) => {
     alert(e.target.innerText);
   }
 
 
 
-  let showSanaIzvelne = ()=>{
+  let showSanaIzvelne = () => {
     setOpenSanaIzvelne(true);
     // alert(openSanaIzvelne);
 
   }
 
-  const pasleptJoslu = (e)=>{
+  const pasleptJoslu = (e) => {
     // console.log(e);
-    if(e.target==document.querySelector('.MuiBackdrop-root')){
-       setOpenSanaIzvelne(false);
+    if (e.target == document.querySelector('.MuiBackdrop-root')) {
+      setOpenSanaIzvelne(false);
 
     }
   }
@@ -41,14 +46,37 @@ function App() {
 
   return (
     <div className='app' onClick={pasleptJoslu}>
-      <ButtonAppBar setFunc={showSanaIzvelne}/>
-      <SanaIzvelne opened={openSanaIzvelne}/>
+      <ButtonAppBar setFunc={showSanaIzvelne} />
+      <SanaIzvelne opened={openSanaIzvelne} />
       <Hederis />
-      <main>
-       <h3 onClick={showAlert}>Mūsu pakalpojumi</h3>
-       <Pakalpojumi />
-       <MateralUI />
-      </main>
+      <BrowserRouter>
+        <nav>
+          <Link to="/">Galvenā</Link> |{" "}
+          <Link to="/pakalpojumi">Pakalpojumi</Link> |{" "}
+          <Link to="/elementi">Elementi</Link> |{" "}
+          <Link to="/user/andrejs">Andrejs</Link> |{" "}
+          <Link to="/user/vitalijs">vitalijs</Link>
+        </nav>
+        <main>
+
+
+
+
+          {/* Routes */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/pakalpojumi" element={<Pakalpojumi />} />
+            <Route path="/elementi" element={<MateralUI />} />
+            <Route path="/user/:username" element={<User />} />
+          </Routes>
+
+          {/* Your app content */}
+
+          <h3 onClick={showAlert}>Mūsu pakalpojumi</h3>
+
+
+        </main>
+      </BrowserRouter>
       <footer>
         <h3>Fūteris</h3>
       </footer>
