@@ -46,17 +46,18 @@ function App() {
 
   return (
     <div className='app' onClick={pasleptJoslu}>
-      <ButtonAppBar setFunc={showSanaIzvelne} />
-      <SanaIzvelne opened={openSanaIzvelne} />
-      <Hederis />
-      <BrowserRouter>
-        <nav>
+       <BrowserRouter>
+        <ButtonAppBar setFunc={showSanaIzvelne} />
+        <SanaIzvelne opened={openSanaIzvelne} />
+        <Hederis />
+     
+        {/* <nav>
           <Link to="/">Galvenā</Link> |{" "}
           <Link to="/pakalpojumi">Pakalpojumi</Link> |{" "}
           <Link to="/elementi">Elementi</Link> |{" "}
           <Link to="/user/andrejs">Andrejs</Link> |{" "}
           <Link to="/user/vitalijs">vitalijs</Link>
-        </nav>
+        </nav> */}
         <main>
 
 
