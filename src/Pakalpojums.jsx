@@ -1,8 +1,21 @@
 import Button from '@mui/material/Button';
+import { useState } from "react";
 
 function Pakalpojums(props) {
 
+    const [color, setColor] = useState("green");
+    
 
+
+    function handleClick(){
+        setColor("red");
+
+
+    }
+
+    function mouseLeave(){
+        setColor("transparent");
+    }
     
 
 
@@ -19,7 +32,7 @@ function Pakalpojums(props) {
 
     return ( 
     <>
-        <div className={props.stils} >
+        <div className={props.stils} style={{background:color}} onMouseOver={handleClick} onMouseLeave={mouseLeave}>
                 <h5>{props.nosaukums}</h5>
                 <p>{props.apraksts}</p>
                 <img src={props.attels} alt={props.nosaukums+"_logo"} />
