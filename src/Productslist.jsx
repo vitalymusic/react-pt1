@@ -4,6 +4,7 @@ import './productslist.css';
 function Productslist() {
 
     const [data, setData] = useState([]);
+    const [searchInpValue, setsearchInpValue] = useState("");
 
     const getProducts = ()=>{
         fetch('https://dummyjson.com/products')
@@ -20,13 +21,31 @@ function Productslist() {
     useEffect(getProducts,[]);
 
     
+    const formSubmit = (e)=>{
+        e.preventDefault();
+            fetch(`https://dummyjson.com/products/search?q=${searchInpValue}`)
+            .then(res => res.json())
+            .then(data => {setData(data.products)})
+            .then(setsearchInpValue(""));
+         }
+
+    
     
 
 
     return ( 
     <>
     <h2>Produktu katalogs</h2>
+    <div className='product-search'>
+        <form onSubmit={(e)=>{
+                formSubmit(e);
+            }}>
+            <input type="text" placeholder='Ievadiet produkta nosaukumu' onInput={(e)=>{setsearchInpValue(e.target.value)}} value={searchInpValue}></input> 
+            <input type="submit" value="Meklēt"   />
 
+        </form>
+           
+    </div>    
     <div className='products'>
         {data.map((product,i)=>{
             return (
