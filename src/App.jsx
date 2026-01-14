@@ -49,7 +49,7 @@ function App() {
       <footer>
         <h3>Fūteris</h3>
       </footer>
-    </div>
+    </>
   )
 }
 
