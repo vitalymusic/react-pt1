@@ -45,7 +45,11 @@ function Productslist() {
 
         </form>
            
-    </div>    
+    </div>  
+
+    <div className="product-categories">
+        {/* izvadīt produktu kategorijas */}
+    </div>  
     <div className='products'>
         {data.map((product,i)=>{
             return (
