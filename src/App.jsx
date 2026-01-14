@@ -8,23 +8,13 @@ import './App.css';
 import Hederis from './Hederis';
 import Pakalpojumi from './Pakalpojumi';
 import MateralUI from './MateralUI';
-import ButtonAppBar from './ButtonAppBar';
-import SanaIzvelne from './SanaIzvelne';
-import Home from './Home';
-
-
-import { BrowserRouter, Routes, Route, Link} from 'react-router-dom';
-import User from './User';
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 
 function App() {
+//  JSX - JavaScripteXtended
+  let showAlert = (e)=>{
 
-  const [openSanaIzvelne, setOpenSanaIzvelne] = useState(false);
-
-
-
-  //  JSX - JavaScripteXtended
-  let showAlert = (e) => {
-    alert(e.target.innerText);
   }
 
 
@@ -45,39 +35,17 @@ function App() {
 
 
   return (
-    <div className='app' onClick={pasleptJoslu}>
-       <BrowserRouter>
-        <ButtonAppBar setFunc={showSanaIzvelne} />
-        <SanaIzvelne opened={openSanaIzvelne} />
-        <Hederis />
-     
-        {/* <nav>
-          <Link to="/">Galvenā</Link> |{" "}
-          <Link to="/pakalpojumi">Pakalpojumi</Link> |{" "}
-          <Link to="/elementi">Elementi</Link> |{" "}
-          <Link to="/user/andrejs">Andrejs</Link> |{" "}
-          <Link to="/user/vitalijs">vitalijs</Link>
-        </nav> */}
-        <main>
-
-
-
-
-          {/* Routes */}
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/pakalpojumi" element={<Pakalpojumi />} />
-            <Route path="/elementi" element={<MateralUI />} />
-            <Route path="/user/:username" element={<User />} />
-          </Routes>
-
-          {/* Your app content */}
-
-          <h3 onClick={showAlert}>Mūsu pakalpojumi</h3>
-
-
-        </main>
-      </BrowserRouter>
+    <>
+      <Hederis />
+      <main>
+       <h3 onClick={showAlert}>Mūsu pakalpojumi</h3>
+        <Alert icon={
+                   <CheckIcon fontSize="inherit" />} severity="success" >
+               Here is a gentle confirmation that your action was successful.
+        </Alert>
+       <Pakalpojumi />
+       <MateralUI />
+      </main>
       <footer>
         <h3>Fūteris</h3>
       </footer>

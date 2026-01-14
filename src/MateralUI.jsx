@@ -1,8 +1,7 @@
 import Button from '@mui/material/Button';
-import FormasDialogs from './FormasDialogs';
-
-
-
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
+import StandardImageList from './Imagelist'
 
 
 function MateralUI() {
@@ -21,8 +20,12 @@ function MateralUI() {
         </Button>
 
 
-        <FormasDialogs openFunc={openDialog}/>
-    
+
+        <Alert icon={
+            <CheckIcon fontSize="inherit" />} severity="success">
+        Here is a gentle confirmation that your action was successful.
+        </Alert>
+        <StandardImageList />      
     </> );
 }
 
