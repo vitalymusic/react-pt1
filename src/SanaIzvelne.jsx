@@ -34,6 +34,7 @@ const menuItems = [
     { text: 'Galvenā', icon: <InboxIcon />, path: '/' },
     { text: 'Pakalpojumi', icon: <MailIcon />, path: '/pakalpojumi' },
     { text: 'Elementi', icon: <InboxIcon />, path: '/elementi' },
+    { text: 'Veikals', icon: <InboxIcon />, path: '/shop' },
   ];
 
 
